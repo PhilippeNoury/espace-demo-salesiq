@@ -1,0 +1,63 @@
+/* Basic clean styles for a simple demo site */
+:root{
+  --brand:#0b6a6d;
+  --brand-2:#0e8b90;
+  --text:#1b1b1b;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --bg-alt:#f7fafc;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:var(--text);background:var(--bg)}
+img{max-width:100%;height:auto;border-radius:12px}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--brand);letter-spacing:.2px}
+.nav{display:flex;gap:18px;font-weight:600}
+.nav a{padding:10px 12px;border-radius:10px}
+.nav a.active, .nav a:hover{background:var(--bg-alt)}
+.cta{background:var(--brand);color:#fff;padding:10px 14px;border-radius:12px;font-weight:700}
+.hero{background:linear-gradient(180deg, #edfafa 0%, #fff 100%);padding:72px 0}
+.hero h1{font-size:42px;line-height:1.1;margin:0 0 10px}
+.hero p{font-size:18px;color:var(--muted);max-width:700px}
+.hero .actions{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 16px;border-radius:12px;font-weight:700;border:1px solid #e5e7eb}
+.btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+.btn.secondary{background:#fff;color:var(--brand)}
+.grid{display:grid;gap:24px}
+.grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width: 900px){.grid.cols-3{grid-template-columns:1fr 1fr}}
+@media (max-width: 640px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
+.section{padding:56px 0}
+.card{background:#fff;border:1px solid #eef2f7;border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--bg-alt);color:var(--brand);font-weight:700;font-size:12px}
+.pricing{display:grid;gap:24px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width: 800px){.pricing{grid-template-columns:1fr}}
+.price-card{border:2px solid #e6f2f2}
+.price{font-size:38px;font-weight:800;margin:10px 0}
+.footer{background:#0f172a;color:#e2e8f0;margin-top:56px}
+.footer a{color:#cbe9ea}
+.footer .inner{padding:28px 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.small{font-size:12px;color:#94a3b8}
+.notice{padding:14px;border:1px dashed #cbd5e1;border-radius:12px;background:#f8fafc;color:#0f172a}
+.code-block{background:#0b2530;color:#d9f2ff;padding:14px;border-radius:12px;overflow:auto;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,"Liberation Mono","Courier New",monospace}
+
+
+/* --- Floating promo popup & scroll-to-top --- */
+.promo-popup{position:fixed;right:20px;bottom:88px;width:300px;background:#000;color:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(2,6,23,.2);font-size:14px;z-index:9998;border:2px solid #c7f9ff}
+.promo-popup img{display:block;width:100%;height:auto}
+.promo-popup .popup-content{padding:12px}
+.promo-popup h4{margin:0 0 6px;font-size:16px}
+.promo-popup p{margin:0 0 8px;font-size:13px;line-height:1.4;color:#e2e8f0}
+.promo-popup .popup-cta{font-weight:800;color:#facc15}
+.popup-link{color:inherit;text-decoration:none;display:block}
+.popup-close{position:absolute;top:6px;right:8px;background:rgba(0,0,0,.5);border:none;color:#fff;width:28px;height:28px;border-radius:999px;font-size:18px;cursor:pointer}
+
+/* scroll-to-top round button */
+.scroll-top-btn{display:none;position:fixed;bottom:20px;right:20px;z-index:9999;font-size:22px;border:none;outline:none;background-color:#facc15;color:#000;cursor:pointer;padding:12px 16px;border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.scroll-top-btn:hover{background-color:#eab308}
+@media (max-width:640px){.promo-popup{right:12px;left:12px;width:auto}}
